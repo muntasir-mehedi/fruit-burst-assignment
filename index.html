@@ -1,12 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fruit Burst</title>
-    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
-</head>
-<body>
-    
-</body>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon" />
+    <!-- tailwind & daisyUI link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- fonts family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- tailwind custom color -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              "color-primary": "#F85559",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- custom styles -->
+    <style>
+      .font-lato {
+        font-family: "Lato";
+      }
+    </style>
+  </head>
+
+  <body class="font-lato">
+    <header class="my-3 lg:mx-28 md:mx-4">
+      <!-- nav section -->
+      <nav class="md:bg-[#F85559] rounded-full p-4 my-8">
+        <div class="navbar md:text-white">
+          <div class="px-3 hidden lg:flex">
+            <ul class="flex justify-around text-sm">
+              <li class="pl-4"><a>Home</a></li>
+              <li class="pl-4"><a>Shop</a></li>
+              <li class="pl-4"><a>About Us</a></li>
+              <li class="pl-4"><a>All Fruits</a></li>
+            </ul>
+          </div>
+          <div class="flex-1 lg:justify-center">
+            <img class="w-6 md:w-9" src="./images/logo.png" alt="" />
+            <a class="btn btn-ghost normal-case lg:text-3xl md:text-2xl"
+              >Fruit Burst</a
+            >
+          </div>
+          <div class="flex-1 gap-2 justify-end hidden md:flex">
+            <div class="form-control w-9/12">
+              <label class="relative block">
+                <input
+                  class="w-full bg-white rounded-full drop-shadow-md py-2 pl-3 pr-10 focus:outline-none"
+                  placeholder="Search here"
+                  type="text"
+                />
+
+                <span class="absolute inset-y-0 right-0 flex items-center pr-3">
+                  <svg
+                    class="h-5 w-5 fill-black"
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="30"
+                    height="30"
+                    viewBox="0 0 30 30"
+                  >
+                    <path
+                      d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"
+                    ></path>
+                  </svg>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="flex-none dropdown dropdown-end lg:hidden flex">
+            <button class="btn btn-square btn-ghost text-black">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block w-5 h-5 stroke-current"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+            <ul
+              tabindex="0"
+              class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-44 text-black"
+            >
+              <li><a>Home</a></li>
+              <li><a>About Us</a></li>
+              <li><a>Shop</a></li>
+              <li><a>All Fruits</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- banner section -->
+      <div class="carousel w-full">
+        <div id="slide1" class="carousel-item relative w-full">
+          <img src="./images/banner1.png" class="w-full" />
+          <div
+            class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+          >
+            <a href="#slide4" class="btn btn-circle">❮</a>
+            <a href="#slide2" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide2" class="carousel-item relative w-full">
+          <img src="./images/banner2.png" class="w-full" />
+          <div
+            class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+          >
+            <a href="#slide1" class="btn btn-circle">❮</a>
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide3" class="carousel-item relative w-full">
+          <img src="./images/banner3.png" class="w-full" />
+          <div
+            class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+          >
+            <a href="#slide2" class="btn btn-circle">❮</a>
+            <a href="#slide4" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide4" class="carousel-item relative w-full">
+          <img src="./images/banner4.png" class="w-full" />
+          <div
+            class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+          >
+            <a href="#slide3" class="btn btn-circle">❮</a>
+            <a href="#slide1" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1>Exotic tastes at your doorstep</h1>
+        <p>We supply highly quality organic products</p>
+        <a href="">Shop Now</a>
+      </div>
+    </header>
+    <main></main>
+    <footer></footer>
+  </body>
 </html>
